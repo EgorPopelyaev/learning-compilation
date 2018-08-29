@@ -1,0 +1,34 @@
+package com.epo.learning.ds;
+
+public class Stack {
+  private static class Node {
+    int data;
+    Node next;
+    private Node(int data) {
+      this.data = data;
+    }
+  }
+
+  Node top;
+
+  public boolean isEmpty() {
+    return top == null;
+  }
+
+  public int peek() {
+    return top.data;
+  }
+
+  public void push(int value) {
+    Node node = new Node(value);
+
+    node.next = top;
+    top = node;
+  }
+
+  public int pop() {
+    int data = top.data;
+    top = top.next;
+    return data;
+  }
+}
